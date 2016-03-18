@@ -58,6 +58,6 @@ $reviews = $airbnb->reviews()->allForListing($request);
 #### Users
 ```php
 // Get user
-$request = new UserRequest();
+$request = new UserRequest(<user id>);
 $user = $airbnb->users()->view($request);
 ```
