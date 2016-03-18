@@ -12,6 +12,9 @@ Add to composer.json
 $airbnb = new AirbnbSDK('<your api key>');
 ```
 
+### How to get an API call
+Log into Airbnb.com, open up the web developer console, go to the network tab, filter by type json, and look at the url and find "client_id".
+
 ### Making API Calls
 
 #### Listings
