@@ -7,26 +7,69 @@ use JMS\Serializer\Annotation as JMS;
 
 class User
 {
+
+    /**
+    * @JMS\Type("string")
+    *
+    * @var string $about
+    */
+    private $about;
+
+    /**
+    * @JMS\Type("string")
+    *
+    * @var string $acceptanceRate
+    */
+    private $acceptanceRate;
+
+    /**
+    * @JMS\Type("integer")
+    *
+    * @var int $bookings
+    */
+    private $bookings;
+
+    /**
+    * @JMS\Type("string")
+    *
+    * @var string $createdAt @TODO
+    */
+    private $createdAt;
+
+    /**
+    * @JMS\Type("string")
+    *
+    * @var string $firstName
+    */
+    private $firstName;
+
+    /**
+    * @JMS\Type("integer")
+    *
+    * @var int $friendsCount
+    */
+    private $friendsCount;
+
+    /**
+    * @JMS\Type("boolean")
+    *
+    * @var bool $hasAvailablePayoutInfo
+    */
+    private $hasAvailablePayoutInfo;
+
+    /**
+    * @JMS\Type("boolean")
+    *
+    * @var bool $hasProfilePic
+    */
+    private $hasProfilePic;
+
     /**
      * @JMS\Type("integer")
      *
      * @var int $id
      */
     private $id;
-
-    /**
-     * @JMS\Type("string")
-     *
-     * @var string $acceptanceRate
-     */
-    private $acceptanceRate;
-
-    /**
-     * @JMS\Type("string")
-     *
-     * @var string $createdAt @TODO
-     */
-    private $createdAt;
 
     /**
      * @JMS\Type("boolean")
@@ -36,11 +79,46 @@ class User
     private $identityVerified;
 
     /**
+    * @JMS\Type("boolean")
+    *
+    * @var bool $isGeneratedUser
+    */
+    private $isGeneratedUser;
+
+    /**
      * @JMS\Type("boolean")
      *
      * @var bool $isSuperhost
      */
     private $isSuperhost;
+
+    /**
+    * @JMS\Type("integer")
+    *
+    * @var int $listingsCount
+    */
+    private $listingsCount;
+
+    /**
+    * @JMS\Type("string")
+    *
+    * @var string $location
+    */
+    private $location;
+
+    /**
+    * @JMS\Type("string")
+    *
+    * @var string $neighborhood
+    */
+    private $neighborhood;
+
+    /**
+     * @JMS\Type("string")
+     *
+     * @var string $pictureUrl
+     */
+    private $pictureUrl;
 
     /**
      * @JMS\Type("string")
@@ -55,6 +133,20 @@ class User
      * @var int $publiclyVisibleWishlistsCount
      */
     private $publiclyVisibleWishlistsCount;
+
+    /**
+    * @JMS\Type("todo")
+    *
+    * @TODO
+    */
+    private $recentRecommendation;
+
+    /**
+    * @JMS\Type("AirbnbSDK\Response\User\Review\RecentReview")
+    *
+    * @var RecentReview $recentReview
+    */
+    private $recentReview;
 
     /**
      * @JMS\Type("integer")
@@ -85,6 +177,13 @@ class User
     private $revieweeCount;
 
     /**
+    * @JMS\Type("string")
+    *
+    * @var string $work
+    */
+    private $school;
+
+    /**
      * @JMS\Type("string")
      *
      * @var string $thumbnailMediumUrl
@@ -92,95 +191,46 @@ class User
     private $thumbnailMediumUrl;
 
     /**
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      *
-     * @var int $wishlistsCount
+     * @var string $thumbnailUrl
      */
+    private $thumbnailUrl;
+
+    /**
+    * @JMS\Type("integer")
+    *
+    * @var int $totalListingsCount
+    */
+    private $totalListingsCount;
+
+    /**
+    * @JMS\Type("integer")
+    *
+    * @var int $trips
+    */
+    private $trips;
+
+    /**
+    * @JMS\Type("integer")
+    *
+    * @var int $wishlistsCount
+    */
     private $wishlistsCount;
 
     /**
-     * @JMS\Type("string")
-     *
-     * @var string $neighborhood
-     */
-    private $neighborhood;
-
-    /**
-     * @JMS\Type("array")
-     *
-     * @var array $verificationLabels
-     */
+    * @JMS\Type("array")
+    *
+    * @var array $verificationLabels
+    */
     private $verificationLabels;
 
     /**
-     * @JMS\Type("array")
-     *
-     * @var array $verifications
-     */
+    * @JMS\Type("array")
+    *
+    * @var array $verifications
+    */
     private $verifications;
-
-    /**
-     * @JMS\Type("string")
-     *
-     * @var string $about
-     */
-    private $about;
-
-    /**
-     * @JMS\Type("integer")
-     *
-     * @var int $friendsCount
-     */
-    private $friendsCount;
-
-    /**
-     * @JMS\Type("boolean")
-     *
-     * @var bool $isGeneratedUser
-     */
-    private $isGeneratedUser;
-
-    /**
-     * @JMS\Type("integer")
-     *
-     * @var int $listingsCount
-     */
-    private $listingsCount;
-
-    /**
-     * @JMS\Type("string")
-     *
-     * @var string $location
-     */
-    private $location;
-
-    /**
-     * @JMS\Type("todo")
-     *
-     * @TODO
-     */
-    private $recentRecommendation;
-
-    /**
-     * @JMS\Type("AirbnbSDK\Response\User\Review\RecentReview")
-     *
-     * @var RecentReview $recentReview
-     */
-    private $recentReview;
-
-    /**
-     * @JMS\Type("string")
-     *
-     * @var string $work
-     */
-    private $school;
-
-    /**
-     * @JMS\Type("integer")
-     *
-     * @var int $work
-     */
-    private $totalListingsCount;
 
     /**
      * @JMS\Type("string")
@@ -188,6 +238,134 @@ class User
      * @var string $work
      */
     private $work;
+
+    /**
+    * @return string
+    */
+    public function getAbout()
+    {
+      return $this->about;
+    }
+
+    /**
+    * @param string $about
+    */
+    public function setAbout($about)
+    {
+      $this->about = $about;
+    }
+
+    /**
+    * @return string
+    */
+    public function getAcceptanceRate()
+    {
+      return $this->acceptanceRate;
+    }
+
+    /**
+    * @param string $acceptanceRate
+    */
+    public function setAcceptanceRate($acceptanceRate)
+    {
+      $this->acceptanceRate = $acceptanceRate;
+    }
+
+    /**
+    * @return string
+    */
+    public function getBookings()
+    {
+      return $this->bookings;
+    }
+
+    /**
+    * @param string $bookings
+    */
+    public function setBookings($bookings)
+    {
+      $this->bookings = $bookings;
+    }
+
+    /**
+    * @return string
+    */
+    public function getCreatedAt()
+    {
+      return $this->createdAt;
+    }
+
+    /**
+    * @param string $createdAt
+    */
+    public function setCreatedAt($createdAt)
+    {
+      $this->createdAt = $createdAt;
+    }
+
+    /**
+    * @return string
+    */
+    public function getFirstName()
+    {
+      return $this->firstName;
+    }
+
+    /**
+    * @param string $firstName
+    */
+    public function setFirstName($firstName)
+    {
+      $this->firstName = $firstName;
+    }
+
+    /**
+    * @return int
+    */
+    public function getFriendsCount()
+    {
+      return $this->friendsCount;
+    }
+
+    /**
+    * @param int $friendsCount
+    */
+    public function setFriendsCount($friendsCount)
+    {
+      $this->friendsCount = $friendsCount;
+    }
+
+    /**
+    * @return bool
+    */
+    public function isHasAvailablePayoutInfo()
+    {
+      return $this->hasAvailablePayoutInfo;
+    }
+
+    /**
+    * @param bool $hasAvailablePayoutInfo
+    */
+    public function setHasAvailablePayoutInfo($hasAvailablePayoutInfo)
+    {
+      $this->hasAvailablePayoutInfo = $hasAvailablePayoutInfo;
+    }
+
+    /**
+    * @return bool
+    */
+    public function isHasProfilePic()
+    {
+      return $this->hasProfilePic;
+    }
+
+    /**
+    * @param bool $hasProfilePic
+    */
+    public function setHasProfilePic($hasProfilePic)
+    {
+      $this->hasProfilePic = $hasProfilePic;
+    }
 
     /**
      * @return int
@@ -203,38 +381,6 @@ class User
     public function setId($id)
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAcceptanceRate()
-    {
-        return $this->acceptanceRate;
-    }
-
-    /**
-     * @param string $acceptanceRate
-     */
-    public function setAcceptanceRate($acceptanceRate)
-    {
-        $this->acceptanceRate = $acceptanceRate;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
     }
 
     /**
@@ -254,6 +400,22 @@ class User
     }
 
     /**
+    * @return boolean
+    */
+    public function isIsGeneratedUser()
+    {
+      return $this->isGeneratedUser;
+    }
+
+    /**
+    * @param boolean $isGeneratedUser
+    */
+    public function setIsGeneratedUser($isGeneratedUser)
+    {
+      $this->isGeneratedUser = $isGeneratedUser;
+    }
+
+    /**
      * @return boolean
      */
     public function isIsSuperhost()
@@ -267,6 +429,70 @@ class User
     public function setIsSuperhost($isSuperhost)
     {
         $this->isSuperhost = $isSuperhost;
+    }
+
+    /**
+    * @return int
+    */
+    public function getListingsCount()
+    {
+      return $this->listingsCount;
+    }
+
+    /**
+    * @param int $listingsCount
+    */
+    public function setListingsCount($listingsCount)
+    {
+      $this->listingsCount = $listingsCount;
+    }
+
+    /**
+    * @return string
+    */
+    public function getLocation()
+    {
+      return $this->location;
+    }
+
+    /**
+    * @param string $location
+    */
+    public function setLocation($location)
+    {
+      $this->location = $location;
+    }
+
+    /**
+    * @return string
+    */
+    public function getNeighborhood()
+    {
+      return $this->neighborhood;
+    }
+
+    /**
+    * @param string $neighborhood
+    */
+    public function setNeighborhood($neighborhood)
+    {
+      $this->neighborhood = $neighborhood;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPictureUrl()
+    {
+        return $this->pictureUrl;
+    }
+
+    /**
+     * @param string $pictureUrl
+     */
+    public function setPictureUrl($pictureUrl)
+    {
+        $this->pictureUrl = $pictureUrl;
     }
 
     /**
@@ -299,6 +525,38 @@ class User
     public function setPubliclyVisibleWishlistsCount($publiclyVisibleWishlistsCount)
     {
         $this->publiclyVisibleWishlistsCount = $publiclyVisibleWishlistsCount;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getRecentRecommendation()
+    {
+      return $this->recentRecommendation;
+    }
+
+    /**
+    * @param mixed $recentRecommendation
+    */
+    public function setRecentRecommendation($recentRecommendation)
+    {
+      $this->recentRecommendation = $recentRecommendation;
+    }
+
+    /**
+    * @return RecentReview
+    */
+    public function getRecentReview()
+    {
+      return $this->recentReview;
+    }
+
+    /**
+    * @param RecentReview $recentReview
+    */
+    public function setRecentReview($recentReview)
+    {
+      $this->recentReview = $recentReview;
     }
 
     /**
@@ -366,6 +624,22 @@ class User
     }
 
     /**
+    * @return string
+    */
+    public function getSchool()
+    {
+      return $this->school;
+    }
+
+    /**
+    * @param string $school
+    */
+    public function setSchool($school)
+    {
+      $this->school = $school;
+    }
+
+    /**
      * @return string
      */
     public function getThumbnailMediumUrl()
@@ -382,6 +656,54 @@ class User
     }
 
     /**
+     * @return string
+     */
+    public function getThumbnailUrl()
+    {
+        return $this->thumbnailUrl;
+    }
+
+    /**
+     * @param string $thumbnailUrl
+     */
+    public function setThumbnailUrl($thumbnailUrl)
+    {
+        $this->thumbnailUrl = $thumbnailUrl;
+    }
+
+    /**
+    * @return int
+    */
+    public function getTotalListingsCount()
+    {
+      return $this->totalListingsCount;
+    }
+
+    /**
+    * @param int $totalListingsCount
+    */
+    public function setTotalListingsCount($totalListingsCount)
+    {
+      $this->totalListingsCount = $totalListingsCount;
+    }
+
+    /**
+    * @return int
+    */
+    public function getTrips()
+    {
+      return $this->trips;
+    }
+
+    /**
+    * @param int $trips
+    */
+    public function setTrips($trips)
+    {
+      $this->trips = $trips;
+    }
+
+    /**
      * @return int
      */
     public function getWishlistsCount()
@@ -395,22 +717,6 @@ class User
     public function setWishlistsCount($wishlistsCount)
     {
         $this->wishlistsCount = $wishlistsCount;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNeighborhood()
-    {
-        return $this->neighborhood;
-    }
-
-    /**
-     * @param string $neighborhood
-     */
-    public function setNeighborhood($neighborhood)
-    {
-        $this->neighborhood = $neighborhood;
     }
 
     /**
@@ -443,150 +749,6 @@ class User
     public function setVerifications($verifications)
     {
         $this->verifications = $verifications;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAbout()
-    {
-        return $this->about;
-    }
-
-    /**
-     * @param string $about
-     */
-    public function setAbout($about)
-    {
-        $this->about = $about;
-    }
-
-    /**
-     * @return int
-     */
-    public function getFriendsCount()
-    {
-        return $this->friendsCount;
-    }
-
-    /**
-     * @param int $friendsCount
-     */
-    public function setFriendsCount($friendsCount)
-    {
-        $this->friendsCount = $friendsCount;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isIsGeneratedUser()
-    {
-        return $this->isGeneratedUser;
-    }
-
-    /**
-     * @param boolean $isGeneratedUser
-     */
-    public function setIsGeneratedUser($isGeneratedUser)
-    {
-        $this->isGeneratedUser = $isGeneratedUser;
-    }
-
-    /**
-     * @return int
-     */
-    public function getListingsCount()
-    {
-        return $this->listingsCount;
-    }
-
-    /**
-     * @param int $listingsCount
-     */
-    public function setListingsCount($listingsCount)
-    {
-        $this->listingsCount = $listingsCount;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
-
-    /**
-     * @param string $location
-     */
-    public function setLocation($location)
-    {
-        $this->location = $location;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRecentRecommendation()
-    {
-        return $this->recentRecommendation;
-    }
-
-    /**
-     * @param mixed $recentRecommendation
-     */
-    public function setRecentRecommendation($recentRecommendation)
-    {
-        $this->recentRecommendation = $recentRecommendation;
-    }
-
-    /**
-     * @return RecentReview
-     */
-    public function getRecentReview()
-    {
-        return $this->recentReview;
-    }
-
-    /**
-     * @param RecentReview $recentReview
-     */
-    public function setRecentReview($recentReview)
-    {
-        $this->recentReview = $recentReview;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSchool()
-    {
-        return $this->school;
-    }
-
-    /**
-     * @param string $school
-     */
-    public function setSchool($school)
-    {
-        $this->school = $school;
-    }
-
-    /**
-     * @return int
-     */
-    public function getTotalListingsCount()
-    {
-        return $this->totalListingsCount;
-    }
-
-    /**
-     * @param int $totalListingsCount
-     */
-    public function setTotalListingsCount($totalListingsCount)
-    {
-        $this->totalListingsCount = $totalListingsCount;
     }
 
     /**
