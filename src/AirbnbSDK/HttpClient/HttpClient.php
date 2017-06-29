@@ -14,7 +14,7 @@ class HttpClient implements HttpClientInterface
      */
     protected $options = [
         'base_uri'    => 'https://api.airbnb.com/v2/',
-        'user_agent'  => 'peggy (http://github.com/JonnyD/airbnbsdk)',
+        'user_agent'  => 'peggy (http://github.com/jackcutting/airbnbsdk)',
         'timeout'     => 10,
         'api_limit'   => 5000,
         'api_version' => 'v2',
@@ -121,7 +121,9 @@ class HttpClient implements HttpClientInterface
         $response = $this->client->send($request);
 
         $contents = $response->getBody()->getContents();
-        $response = $serializer->deserialize($contents, $deserializeTo, 'json');
+        $parsed = $serializer->deserialize($contents, $deserializeTo, 'json');
+
+        $response = new HttpClientResponse($contents, $parsed);
 
         $this->lastRequest = $request;
         $this->lastResponse = $response;
