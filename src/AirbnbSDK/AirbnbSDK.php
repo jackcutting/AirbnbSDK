@@ -2,6 +2,8 @@
 
 namespace AirbnbSDK;
 
+\Doctrine\Common\Annotations\AnnotationRegistry::registerLoader('class_exists');
+
 use AirbnbSDK\API\Listings as ListingsAPI;
 use AirbnbSDK\API\Reviews as ReviewsAPI;
 use AirbnbSDK\API\Users as UsersAPI;
