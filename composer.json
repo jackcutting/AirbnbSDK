@@ -1,15 +1,20 @@
 {
-    "name": "jonnyd/airbnbsdk",
+    "name": "jackcutting/airbnbsdk",
     "type": "library",
     "description": "An Airbnb SDK in PHP",
     "keywords": ["airbnb", "api", "sdk", "travel", "listing", "scaper"],
-    "homepage": "https://github.com/JonnyD/AirbnbSDK",
+    "homepage": "https://github.com/jackcutting/AirbnbSDK",
     "license": "MIT",
     "authors": [
         {
             "name": "Jonathan Devine",
             "email": "dev@jonnydevine.com",
             "homepage": "https://github.com/jonnyd"
+        },
+        {
+            "name": "Jack Cutting",
+            "email": "me@jackcutting.co.uk",
+            "homepage": "https://jackcutting.co.uk"
         }
     ],
     "require": {
