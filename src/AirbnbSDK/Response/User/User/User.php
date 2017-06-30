@@ -135,7 +135,7 @@ class User
     private $publiclyVisibleWishlistsCount;
 
     /**
-    * @JMS\Type("todo")
+    * @JMS\Type("string")
     *
     * @var string $recentRecommendation
     */
