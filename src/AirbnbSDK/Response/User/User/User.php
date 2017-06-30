@@ -135,9 +135,9 @@ class User
     private $publiclyVisibleWishlistsCount;
 
     /**
-    * @JMS\Type("string")
+    * @JMS\Type("array")
     *
-    * @var string $recentRecommendation
+    * @var array $recentRecommendation
     */
     private $recentRecommendation;
 
