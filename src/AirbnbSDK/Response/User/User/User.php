@@ -137,7 +137,7 @@ class User
     /**
     * @JMS\Type("todo")
     *
-    * @TODO
+    * @var string $recentRecommendation
     */
     private $recentRecommendation;
 
