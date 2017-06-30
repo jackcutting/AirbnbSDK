@@ -547,14 +547,14 @@ class Listing
     private $isLocationExact;
 
     /**
-     * @JMS\Type("string")
+     * @JMS\Type("array")
      *
      * @var string $jurisdictionNames
      */
     private $jurisdictionNames;
 
     /**
-     * @JMS\Type("string")
+     * @JMS\Type("array")
      *
      * @var string $jurisdictionRolloutNames
      */
